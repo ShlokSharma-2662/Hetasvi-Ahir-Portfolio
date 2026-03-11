@@ -33,9 +33,15 @@ const Projects = () => {
               key={project.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -10, scale: 1.02 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="group bg-card-dark rounded-[2.5rem] overflow-hidden border border-border-dark shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 flex flex-col"
+              transition={{ 
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+                delay: idx * 0.1 
+              }}
+              className="group bg-card-dark rounded-[2.5rem] overflow-hidden border border-border-dark shadow-sm hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 flex flex-col"
             >
               <div className="p-8 flex-1 flex flex-col">
                 <div className="flex flex-wrap gap-2 mb-6">

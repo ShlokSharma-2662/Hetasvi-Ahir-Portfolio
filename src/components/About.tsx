@@ -25,10 +25,14 @@ const About = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16">
               {portfolioData.stats.map((stat) => (
-                <div key={stat.label} className="text-center p-8 rounded-3xl bg-card-dark border border-border-dark hover:shadow-lg hover:shadow-primary/5 transition-all">
+                <motion.div 
+                  key={stat.label} 
+                  whileHover={{ y: -5, scale: 1.05 }}
+                  className="text-center p-8 rounded-3xl bg-card-dark border border-border-dark hover:shadow-xl hover:shadow-primary/10 transition-all cursor-default"
+                >
                   <p className="text-4xl font-bold text-primary mb-2">{stat.value}</p>
                   <p className="text-sm font-semibold text-slate-500 uppercase tracking-widest">{stat.label}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
 
